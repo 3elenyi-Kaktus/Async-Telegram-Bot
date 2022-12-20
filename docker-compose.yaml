@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  bot:
+    build:
+      context: "."
+      dockerfile: bot/Dockerfile
+    environment:
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+    restart: always
+  second_container:
+    build:
+      context: "."
+      dockerfile: second_dir/Dockerfile
+    restart: always
